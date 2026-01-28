@@ -1,0 +1,414 @@
+:root {
+    --primary-color: #00A8A8;
+    /* Teal-ish Cyan similar to the 'Masters' template often seen */
+    --secondary-color: #1A3C40;
+    --accent-color: #F8B400;
+    --light-bg: #F0F8F8;
+    --dark-bg: #111;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: #555;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #008f8f;
+    border-color: #008f8f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 168, 168, 0.4);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: 500;
+    margin-right: 15px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #fff 0%, #f0fbfc 100%);
+    min-height: 100vh;
+    padding-bottom: 50px;
+    padding-top: 120px;
+    /* Added for navbar clearance */
+    border-radius: 0 0 50px 50px;
+}
+
+.hero-img {
+    border-radius: 30px 0 30px 30px;
+    /* Asymmetric rounding */
+}
+
+.hero-image-wrapper {
+    position: relative;
+}
+
+.absolute-shape {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.grayscale-logos img {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s;
+}
+
+.grayscale-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Service Card */
+.service-card {
+    background: white;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid #eee;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: transparent;
+}
+
+.icon-wrapper {
+    transition: all 0.3s;
+}
+
+.service-card:hover .icon-wrapper {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+/* Portfolio */
+.portfolio-item {
+    cursor: pointer;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-item img {
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Testimonials using a large background */
+#testimonials {
+    background-size: cover;
+    background-position: center;
+}
+
+.absolute-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.absolute-overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+/* Floating Actions */
+.fab-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: all 0.3s;
+}
+
+.fab-whatsapp:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+.fab-top {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.fab-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fab-top:hover {
+    background-color: black;
+    transform: translateY(-5px);
+}
+
+/* Blog */
+.hover-zoom-img img {
+    transition: transform 0.5s ease;
+}
+
+.hover-zoom-img:hover img {
+    transform: scale(1.1);
+}
+
+.bg-gradient-to-t {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+/* General Layout Tweaks */
+.section-padding {
+    padding: 100px 0;
+}
+
+.rounded-4 {
+    border-radius: 1.5rem !important;
+}
+
+/* Mobile Responsiveness Improvements */
+@media (max-width: 991.98px) {
+
+    /* General Padding Adjustments */
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    /* Typography Adjustments */
+    h1.display-3,
+    h1.display-4 {
+        font-size: 2.5rem;
+    }
+
+    h2.display-6,
+    h2.display-4 {
+        font-size: 2rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    /* Navbar Mobile Styles */
+    .navbar-collapse {
+        background: white;
+        padding: 20px;
+        margin-top: 15px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .btn-cta {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding-top: 90px !important;
+        text-align: center;
+        border-radius: 0 0 30px 30px;
+        min-height: auto;
+    }
+
+    .hero-image-wrapper {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .absolute-shape {
+        display: none;
+    }
+
+    .hero-img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+    }
+
+    /* FAB Adjustments for better touch targets */
+    .fab-whatsapp,
+    .fab-top {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 24px;
+        bottom: 20px;
+    }
+
+    .fab-whatsapp {
+        left: 20px;
+    }
+
+    .fab-top {
+        right: 20px;
+    }
+
+    /* Elements ordering and spacing */
+    .order-lg-2 {
+        order: initial !important;
+        /* Reset order for about section */
+    }
+
+    .grayscale-logos .col-6 {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    h1.display-3 {
+        font-size: 2rem;
+    }
+
+    .hero-section {
+        padding-bottom: 30px;
+    }
+
+    .icon-box {
+        margin-bottom: 15px;
+    }
+
+    /* Center align complex flexible layouts on mobile */
+    .d-flex.flex-md-row {
+        flex-direction: column !important;
+    }
+
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Footer Mobile Optimization */
+@media (max-width: 991.98px) {
+    footer {
+        text-align: center;
+    }
+
+    footer .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 1rem;
+    }
+
+    /* Ensure list items are centered */
+    footer ul.list-unstyled li {
+        margin-bottom: 0.5rem;
+    }
+
+    footer .col-lg-4,
+    footer .col-md-6 {
+        margin-bottom: 2rem;
+    }
+}
+/* Map Marker Animation */
+.map-marker .badge { animation: pulse-green 2s infinite; }
+@keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(25, 135, 84, 0); } 100% { box-shadow: 0 0 0 0 rgba(25, 135, 84, 0); } }
