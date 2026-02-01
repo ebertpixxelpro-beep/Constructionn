@@ -299,6 +299,8 @@ h6 {
         margin-top: 15px;
         border-radius: 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        max-height: 80vh;
+        overflow-y: auto;
     }
 
     .nav-item {
@@ -409,6 +411,27 @@ h6 {
         margin-bottom: 2rem;
     }
 }
+
 /* Map Marker Animation */
-.map-marker .badge { animation: pulse-green 2s infinite; }
-@keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(25, 135, 84, 0); } 100% { box-shadow: 0 0 0 0 rgba(25, 135, 84, 0); } }
+.map-marker .badge {
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(25, 135, 84, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(25, 135, 84, 0);
+    }
+}
+
+/* Fix scroll position for anchors */
+section[id] {
+    scroll-margin-top: 100px;
+}
